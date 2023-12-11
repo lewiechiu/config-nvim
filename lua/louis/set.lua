@@ -1,4 +1,4 @@
-vim.cmd 'colorscheme github_dark'
+vim.cmd 'colorscheme github_dark_default'
 
 -- Show vertical lines for commit messages
 
