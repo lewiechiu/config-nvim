@@ -2,8 +2,14 @@ vim.cmd 'colorscheme github_dark_default'
 
 -- Show vertical lines for commit messages
 
-vim.cmd 'autocmd bufreadpre COMMIT_EDITMSG setlocal textwidth=72'
-vim.cmd 'autocmd bufreadpre COMMIT_EDITMSG setlocal colorcolumn=72'
+vim.api.nvim_create_autocmd({ "bufreadpre" }, {
+	pattern = { "COMMIT_EDITMSG" },
+	callback = function()
+    vim.setlocal.colorcolumn=72
+    vim.setlocal.textwidth=72
+	end,
+})
+
 
 vim.g.mapleader = ' '
 
@@ -20,4 +26,12 @@ vim.opt.number = true
 vim.opt.spelllang = 'en_us'
 vim.opt.spell = true
 
-
+-- Set wrap and spell in markdown and gitcommit
+vim.api.nvim_create_autocmd({ "FileType" }, {
+	pattern = { "go" },
+	callback = function()
+		vim.opt.tabstop = 8
+		vim.opt.shiftwidth = 8
+		vim.opt.expandtab = true
+	end,
+})
