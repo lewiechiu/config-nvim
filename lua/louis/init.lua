@@ -1,4 +1,3 @@
-require('louis/set')
 
 return require('packer').startup(function(use)
 
@@ -33,6 +32,7 @@ return require('packer').startup(function(use)
 			{'L3MON4D3/LuaSnip'},
 		}
 	}
-    use "sindrets/diffview.nvim"
+	use "sindrets/diffview.nvim"
 
+	require('louis/set')
 end)
