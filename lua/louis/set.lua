@@ -38,10 +38,10 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
 vim.api.nvim_create_autocmd({ "FileType" }, {
 	pattern = { "python" },
 	callback = function()
-		vim.opt.tabstop = 2
-		vim.opt.shiftwidth = 2
+		vim.opt.tabstop = 4
+		vim.opt.shiftwidth = 4
 		vim.opt.expandtab = true
-    vim.api.nvim_set_option_value("colorcolumn", "80", {})
+    vim.api.nvim_set_option_value("colorcolumn", "88", {})
 	end,
 })
 
@@ -54,3 +54,5 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
     vim.api.nvim_set_option_value("colorcolumn", "80", {})
 	end,
 })
+
+vim.opt.relativenumber = true
