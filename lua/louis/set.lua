@@ -56,3 +56,9 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
 })
 
 vim.opt.relativenumber = true
+
+-- Use Tree-sitter for folding ('expr' method with the TS function)
+vim.opt.foldmethod = 'expr'
+vim.opt.foldexpr = 'nvim_treesitter#foldexpr()'
+
+vim.keymap.set('i', 'jk', '<Esc>', { desc = 'Escape Insert Mode with jk', noremap = true, silent = true })
